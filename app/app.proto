@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option go_package = "./app";
+option java_multiple_files = true;
+option java_outer_classname = "AppProto";
+
+package app;
+
+// The Students service definition.
+service Students {
+  // Sends a greeting
+  rpc GetStudents (StudentRequest) returns (StudentResp) {}
+
+}
+
+// The request message containing the user's name.
+message StudentRequest {
+  int32 id = 1;
+}
+
+// The response message containing the greetings
+message StudentResp {
+    int32  id       = 1;
+    string name     = 2;
+    string code     = 3;
+    string program  = 4;
+}
